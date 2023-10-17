@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <meta charset="utf-8"/>
+    <meta name="description" content="My own CV"/>
+    <meta name="author" content="Aniol Juanola Vilalta (arand0musernam3)" />
+    <title>Hangman</title>
+    <script src="hangman.js"></script>
+</head>
+<body>http://flashbynight.com/tutes/hangmanhtml5/
+    <h1>Hangman</h1>
+    <div id="player_name">
+        <h2>Player information:</h2>
+        <p>Player name:</p>
+        <input id="name_input" type="text">
+        <button id="start_game" onclick="startGame()">Start game</button>
+    </div>
+    <div id="game">
+        <h1 id="player_name_header">Player</h1>
+        <h2 id="guessing_word">_ _ _ _ _</h2>
+        <span>
+            <input id="guessed_char" type="text" pattern="[A-Za-z]{1}" maxlength="1" title="Please enter only one letter"/>
+            <button id="input_char" onclick="validateCharacter()">Entrar</button>
+        </span>
+        <img id="hangman_img" src="img/hangman_0.png">
+    </div>
+    <div id="div_scoreboard" class="scoreboard">
+        <h2>Scoreboard</h2>
+        <table id="scoreboard">
+            <tr>
+                <th>Username</th>
+                <th>Wins</th>
+                <th>Losses</th>
+                <th>Best time</th>
+            </tr>
+        </table>
+    </div>
+    <div class="bottom_bar">
+        holis
+    </div> 
+</body>
