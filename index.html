@@ -13,17 +13,20 @@
     <div id="player_name">
         <h2>Player information:</h2>
         <p>Player name:</p>
-        <input id="name_input" type="text">
+        <input id="name_input" required type="text">
         <button id="start_game" onclick="startGame()">Start game</button>
     </div>
     <div id="game">
         <h1 id="player_name_header">Player</h1>
         <h2 id="guessing_word">_ _ _ _ _</h2>
         <span>
-            <input id="guessed_char" type="text" pattern="[A-Za-z]{1}" maxlength="1" title="Please enter only one letter"/>
+            <input id="guessed_char" type="text" minlength="1" pattern="[A-Za-z]{1}" maxlength="1" title="Please enter only one letter"/>
             <button id="input_char" onclick="validateCharacter()">Entrar</button>
         </span>
         <img id="hangman_img" src="img/hangman_0.png">
+        <p>Used characters:</p>
+        <div id="wrong_chars">
+        </div>
     </div>
     <div id="div_scoreboard" class="scoreboard">
         <h2>Scoreboard</h2>

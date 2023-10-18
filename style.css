@@ -26,3 +26,17 @@ th {
 #game img {
     width: 50%;
 }
+
+#wrong_chars {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#wrong_chars p {
+    background: black;
+    margin-left: 5px;
+    margin-right: 5px;
+    color: white;
+    font-size: larger;
+}
