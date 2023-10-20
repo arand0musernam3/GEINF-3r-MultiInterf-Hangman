@@ -1,5 +1,5 @@
 //VECTOR OF AVAILABLE WORDS IN GAME
-const words = ["caca"];
+const words = ["figma", "balls", "a"];
 const word = words[Math.floor(Math.random() * words.length)];
 var guessed = "";
 var misses = [];
@@ -17,8 +17,8 @@ function updateGuessed() {
     aux.innerHTML = "";
     for (let i = 0; i < guessed.length; i++) {
         aux.innerHTML += guessed.charAt(i) + " ";
-        console.log(aux.innerHTML);
     }
+    console.log(aux.innerHTML);
 }
 
 function updateImage() {
@@ -79,11 +79,15 @@ function validateCharacter() {
         }
         i++;
     }
-    if (finish == false) {
+    if (finish == false && !misses.includes(char)) {
         misses.push(char);
         addMiss(char);
         updateImage();
     } else {
         updateGuessed();
+        if (!guessed.includes("_")) {
+            setTimeout(function(){alert("Has guanyat!")}, 100); //god forbid me for my sins
+            //TODO: Reinciar el joc, prompt de si vols fer una altra partida.
+        }
     }
 }
