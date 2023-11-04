@@ -1,6 +1,6 @@
 //VECTOR OF AVAILABLE WORDS IN GAME
-const words = ["figma", "balls", "a"];
-const word = words[Math.floor(Math.random() * words.length)];
+const words = ["hello","bye","javascript"];
+var word = words[Math.floor(Math.random() * words.length)];
 var guessed = "";
 var misses = [];
 var imageNum = 0;
@@ -52,14 +52,13 @@ function startGame() {
 function addMiss(char) {
     let doc = document.getElementById("wrong_chars");
     let para = document.createElement("p");
-    para.innerHTML = char;
+    para.innerHTML = char.toUpperCase();
     doc.appendChild(para);
 }
 
 function validateCharacter() {
-    //TODO: COMPROVAR QUE NO HAGUEM FET SERVIR AQUESTA LLETRA ABANS
     let doc = document.getElementById("guessed_char");
-    let char = doc.value[0];
+    let char = doc.value.toLowerCase()[0];
 
     if (doc.value === "") {
         alert("El caràcter no pot ser buit.");
@@ -82,12 +81,46 @@ function validateCharacter() {
     if (finish == false && !misses.includes(char)) {
         misses.push(char);
         addMiss(char);
-        updateImage();
+        if (misses.length < 9) { //you have a maximum of 8 tries
+            updateImage();
+        }
+        else {
+            setTimeout(function(){
+                if (confirm("Has perdut!\nPrem d'acord per a començar una nova partida.")) {
+                    restartMatch();
+                }
+            }, 100);
+        }
     } else {
         updateGuessed();
         if (!guessed.includes("_")) {
-            setTimeout(function(){alert("Has guanyat!")}, 100); //god forbid me for my sins
-            //TODO: Reinciar el joc, prompt de si vols fer una altra partida.
+            setTimeout(function(){
+                if (confirm("Has guanyat!\nPrem d'acord per a començar una nova partida.")) {
+                    restartMatch();
+                }
+            }, 100); //god forgive me for my sins
         }
     }
+}
+
+function restartMatch() {
+    //restart image
+    imageNum = 0;
+    aux = document.getElementById("hangman_img");
+    aux.src = "img/hangman_" + imageNum + ".png";
+
+    //remove used characters
+    misses = [];
+    let doc = document.getElementById("wrong_chars");
+    doc.replaceChildren();
+
+    //randomly pick new word
+    word = words[Math.floor(Math.random() * words.length)];
+    guessed = "";
+    
+    for (let i = 0; i < word.length; i++) {
+        guessed += '_';
+    }
+    
+    updateGuessed();
 }
