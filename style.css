@@ -1,5 +1,16 @@
+html {
+    box-sizing: border-box;
+  }
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
 body {
     font-family: 'Roboto', 'Roboto Regular', 'Lucida Grande', 'Roboto Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 table {
@@ -21,10 +32,19 @@ th {
 #game {
     display: none;
     flex-direction: column;
+    margin: 20px;
+    width: 70%;
+    align-self: center;
+    align-items: center;
 }
 
 #game img {
-    width: 50%;
+    width: 100%;
+    max-width: 400px;
+}
+#game > span {
+    width: 100%;
+    max-width: 400px;
 }
 
 #wrong_chars {
@@ -39,4 +59,55 @@ th {
     margin-right: 5px;
     color: white;
     font-size: larger;
+}
+
+header {
+    background-color: blue;
+    color: white;
+    padding: 50px;
+}
+h1, h2 {
+    margin: 0;
+}
+
+#player_name {
+    margin: 20px;
+    width: 70%;
+    align-self: center;
+    align-items: center;
+}
+#player_name > h2 {
+    margin-bottom: 10px;
+}
+#name_input, #guessed_char {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    height: 30px;
+    width: 100%;
+    max-width: 400px;
+}
+#start_game, #input_char {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    height: 30px;
+}
+
+#player_name_header {
+    margin-bottom: 20px;
+}
+#wrong_chars p {
+    color: black;
+    background-color: white;
+}
+
+.bottom_bar {
+    margin-top: auto;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    padding-left: 20px;
 }
