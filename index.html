@@ -20,10 +20,12 @@
     </div>
     <div id="game">
         <h1 id="player_name_header">Player</h1>
+        <p id="wins_loses">Wins: 0, Loses: 0</p>
+        <hr id="separator">
         <h2 id="guessing_word">_ _ _ _ _</h2>
         <span>
             <input id="guessed_char" type="text" minlength="1" pattern="[A-Za-z]{1}" maxlength="1" title="Please enter only one letter"/>
-            <button id="input_char" onclick="validateCharacter()">Entrar</button>
+            <button id="input_char" onclick="validateCharacter()">Submit</button>
         </span>
         <img id="hangman_img" src="img/hangman_0.png">
         <p>Used characters:</p>
@@ -31,6 +33,6 @@
         </div>
     </div>
     <div class="bottom_bar">
-        <p>Per Jordi Badia i Aniol Juanola</p>
+        <p>By Jordi Badia & Aniol Juanola</p>
     </div> 
 </body>
