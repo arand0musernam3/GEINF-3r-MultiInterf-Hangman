@@ -71,10 +71,13 @@ h1, h2 {
 }
 
 #player_name {
-    margin: 20px;
-    width: 70%;
-    align-self: center;
+    position: relative;
+    width: 100vh;
+    display: flex;
+    flex-flow: column wrap;
     align-items: center;
+    margin: 20px;
+    align-self: center;
 }
 #player_name > h2 {
     margin-bottom: 10px;
